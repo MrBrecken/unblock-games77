@@ -1,0 +1,15 @@
+<script>
+  const favCookie = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('soundSpaceFavorites='));
+  
+  const favValue = favCookie ? favCookie.split('=').slice(1).join('=') : '';
+  
+  if (favValue) {
+    window.location.replace(
+      'https://faworee.com/soundspacecustoms/?favorites=' + favValue
+    );
+  } else {
+    window.location.replace('https://faworee.com/soundspacecustoms/');
+  }
+</script>
